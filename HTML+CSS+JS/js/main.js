@@ -6,7 +6,6 @@ var toggleModal = document.querySelectorAll('.jl-toggle-modal');
 window.addEventListener('load', function () {
     var pagePreloder = document.querySelector('.jl-preloader');
     pagePreloder.classList.add('jl-fade-out');
- 
     setTimeout(function () {
         pagePreloder.style.display = 'none';
     }, 2000);
@@ -40,4 +39,5 @@ var waypoint = new Waypoint({
         myScrollDown.classList.toggle('jl-fade-out')
     },
     offset: '80%'
-  })
+})
+
