@@ -30,6 +30,9 @@ for (var i = 0; i < toggleModal.length; i++){
     });
 }
 
+var postGallery = document.querySelector('.jl-post-gallery');
+var postGalleryHeight = postGallery.clientHeight;
+postGallery.style.height = (postGalleryHeight - 270)+'px';
 
 // Animando elementos on Scroll com waypoints
 var myScrollDown = document.querySelector('.jl-scroll-down')
@@ -40,4 +43,3 @@ var waypoint = new Waypoint({
     },
     offset: '80%'
 })
-

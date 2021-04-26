@@ -89,6 +89,12 @@ p, label{
     }
 }
 
+@keyframes skeletonBlur {
+    to {
+        background-position: 250% -150px;
+    }
+}
+
 @media screen and (min-width: 320px){
 
     .jl-page-wrapper, .jl-preloader{
@@ -566,40 +572,214 @@ p, label{
 
 /*---PORTFOLIO---*/
 
-.jl-section-offset-top {
-    margin-top: 130px;
-}
+    .jl-section-offset-top {
+        margin-top: 130px;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
-    text-align: right;
-    margin-top: 70px;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info{
+        text-align: right;
+        margin-top: 70px;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
-    float: right;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(odd) .jl-portfolio-item-info button{
+        float: right;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
-    margin-left: 105px;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-info{
+        margin-left: 105px;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row {
-    flex-direction: row-reverse;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) > .row {
+        flex-direction: row-reverse;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb button{
-    float: left;
-    margin-left: 75px;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb button{
+        float: left;
+        margin-left: 75px;
+    }
 
-.jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
-    left: 75px;
-}
+    .jl-portfolio-list .jl-portfolio-item:nth-child(even) .jl-portfolio-item-thumb img{
+        left: 75px;
+    }
 
 /* ---SOBRE--- */
-#jl-avatar-sobre img{
+    #jl-avatar-sobre img{
+        position: relative;
+        left: -15px;
+    }
+
+/*----DETALHES----*/
+.jl-hero {
+    height: 500px;
+    background-image: url('../pages/portfolio/img/hero.png');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    display: block;
+}
+
+.jl-hero h1 {
+    margin-bottom: 50px;
+}
+
+.jl-hero-inner {
+    height: 500px;
+}
+
+.jl-hero-inner-content {
     position: relative;
-    left: -15px;
+}
+
+.jl-hero-inner-content p{
+    margin-bottom: 15px;
+}
+
+.jl-hero-inner-content:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: block;
+    position: absolute;
+    left: -65px;
+    top: -65px;
+    box-sizing: content-box;
+    padding: 65px;
+}
+
+.jl-project-stats {
+    width: 100%;
+    height: 100%;
+    display: table;
+    border-right: 1px solid #2CCB69;
+
+}
+
+.jl-post{
+    width: 100%;
+    display: table;
+}
+
+.jl-post p{
+    margin-bottom: 30px;
+}
+
+.jl-post-section {
+    width: 100%;
+    display: table;
+    padding: 45px 0;
+}
+
+.jl-pre-gallery {
+    padding-bottom: 350px;
+}
+
+.jl-post-gallery {
+    display: block;
+}
+
+.jl-post-gallery .container{
+    position: relative;
+    top: -270px;
+}
+
+.jl-gallery-frame-container {
+    width: 400px;
+    display: none;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1100;
+}
+
+.jl-gallery-frame-inner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.jl-gallery-frame-inner .jl-skeleton-loading {
+    width: 86%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    position: absolute;
+    top: 3%;
+    left: 7%;
+    z-index: 1250;
+}
+
+.jl-gallery-frame-inner .jl-skeleton-loading > div {
+    width: 90%;
+    background-color: #dedede;
+    margin: 10% 0;
+    border-radius: 8px;
+    background-image: url('../images/skeleton-loading-blur.svg');
+    background-repeat: no-repeat;
+    background-position: -100% -150px;
+    animation: skeletonBlur 2s infinite ease-out;
+}
+
+.jl-gallery-frame-inner .jl-skeleton-loading > div:first-child, .jl-gallery-frame-inner .jl-skeleton-loading > div:last-child {
+    height: 15%;
+}
+
+.jl-gallery-frame-inner .jl-skeleton-loading > div:nth-child(2){
+    height: 60%;
+}
+
+.jl-gallery-frame-container .jl-items-next-prev {
+    width: 150px;
+    margin: 75px auto 0 auto;
+}
+
+.jl-close-gallery {
+    width: 45px;
+    height: 45px;
+    display: block;
+    background-color: #000;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: -15px;
+    right: -45px;
+    z-index: 1200;
+}
+
+.jl-close-gallery ion-icon {
+    color: #2CCB69;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+img.jl-gallery-frame {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1300;
+}
+
+.jl-gallery-frame-image {
+    width: 87%;
+    max-width: 87%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 30px;
+    z-index: 1200;
+    position: relative;
+    top: 20px;
 }
 
 }
@@ -758,6 +938,10 @@ p, label{
     font-weight: 800;
 }
 
+.jl-title-medium {
+    font-size: 48px;
+}
+
 .jl-title-large {
     font-size: 64px;
 }
@@ -780,6 +964,10 @@ p, label{
 
 .jl-text-block {
     color: #000;
+}
+
+.jl-text-center{
+    text-align: center;
 }
 
 .jl-bg-green {
